@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { config } from "@/config/env";
-import { getCachedConnectionState } from "@/providers/twelveData";
+import { config } from "@/config/env.js";
+import { getCachedConnectionState } from "@/providers/twelveData.js";
 
 export const systemRouter = Router();
 
