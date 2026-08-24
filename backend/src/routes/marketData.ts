@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { checkConnection, getCachedConnectionState, getQuote, getRecentCandles } from "@/providers/twelveData.ts";
+import { checkConnection, getCachedConnectionState, getQuote, getRecentCandles } from "@/providers/twelveData.js";
 import types { Instrument, Timeframe } from "../types";
 import { config } from "@/config/env.js";
 
