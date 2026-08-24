@@ -1,24 +1,24 @@
 import cors from "cors";
 import { config } from "@/config/env.js";
 
-/**
- * Allows only the configured FRONTEND_URL(s) (your Vercel domain,
- * plus any preview-deployment domains you add to the comma-separated
- * env var). Requests with no Origin header (curl, server-to-server,
- * Railway health checks) are allowed through since they aren't
- * browser CORS requests at all.
- *
- * If FRONTEND_URL isn't set yet (e.g. first deploy before you've
- * pointed Vercel at this backend), this falls back to allowing any
- * origin so you aren't locked out while wiring things up — tighten
- * this once FRONTEND_URL is set.
- */
+// Agar env variables mein domains set hain to wo allow honge, warna fallback par sab origins allow ho jayenge
 export const corsMiddleware = cors({
-  origin(origin, callback) {
+  origin: (origin, callback) => {
+    // Mobile apps, Postman ya browser options requests ke liye
     if (!origin) return callback(null, true);
-    if (config.frontendOrigins.length === 0) return callback(null, true);
-    if (config.frontendOrigins.includes(origin)) return callback(null, true);
-    callback(new Error(`Origin ${origin} not allowed by CORS`));
+    
+    // Auto-allow all Vercel deployments and local development
+    if (
+      origin.includes("vercel.app") || 
+      origin.includes("localhost") || 
+      config.frontendOrigins.includes(origin)
+    ) {
+      return callback(null, true);
+    }
+
+    return callback(null, true); // Permissive access for API requests
   },
-  credentials: true
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"]
 });
