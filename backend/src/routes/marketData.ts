@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { checkConnection, getCachedConnectionState, getQuote, getRecentCandles } from "@/providers/twelveData";
 import type { Instrument, Timeframe } from "@/types";
-import { config } from "@/config/env";
+import { config } from "@/config/env.js";
 
 export const marketDataRouter = Router();
 
