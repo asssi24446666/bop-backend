@@ -3,7 +3,7 @@
 // backend/src — no imports outside this package.
 
 import { config } from "@/config/env.js";
-import type { Candle, ConnectionState, Instrument, Quote, Timeframe } from "../types.js";
+import type { Candle, ConnectionState, Instrument, Quote, Timeframe } from "../types/index.js";
 
 const SYMBOL_MAP: Record<Instrument, string> = {
   XAUUSD: "XAU/USD",
