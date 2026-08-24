@@ -5,13 +5,13 @@
 // configured yet — it never fabricates data instead.
 
 import express from "express";
-import { config } from "@/config/env";
-import { corsMiddleware } from "@/lib/cors";
-import { healthRouter } from "@/routes/health";
-import { marketDataRouter } from "@/routes/marketData";
-import { signalsRouter } from "@/routes/signals";
-import { settingsRouter } from "@/routes/settings";
-import { systemRouter } from "@/routes/system";
+import { config } from "@/config/env.js";
+import { corsMiddleware } from "@/lib/cors.js";
+import { healthRouter } from "@/routes/health.js";
+import { marketDataRouter } from "@/routes/marketData.js";
+import { signalsRouter } from "@/routes/signals.js";
+import { settingsRouter } from "@/routes/settings.js";
+import { systemRouter } from "@/routes/system.js";
 
 const app = express();
 
