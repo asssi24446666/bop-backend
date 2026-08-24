@@ -4,7 +4,7 @@
 // Supabase directly in this architecture; it only calls this backend.
 
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
-import { config } from "@/config/env";
+import { config } from "@/config/env.js";
 
 let client: SupabaseClient | null = null;
 
