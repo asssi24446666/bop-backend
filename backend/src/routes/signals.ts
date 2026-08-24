@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getSupabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase.js";
 
 export const signalsRouter = Router();
 
