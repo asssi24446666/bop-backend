@@ -2,7 +2,7 @@
 // config (never exposed to the frontend). Lives entirely inside
 // backend/src — no imports outside this package.
 
-import { config } from "@/config/env";
+import { config } from "@/config/env.js";
 import type { Candle, ConnectionState, Instrument, Quote, Timeframe } from "@/types";
 
 const SYMBOL_MAP: Record<Instrument, string> = {
