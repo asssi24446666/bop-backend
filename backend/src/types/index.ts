@@ -36,3 +36,13 @@ export interface ConnectionState {
   lastUpdate: number | null;
   errorMessage?: string;
 }
+
+export type NewsImpact = "LOW" | "MEDIUM" | "HIGH";
+
+export interface NewsEvent {
+  id: string;
+  title: string;
+  instrument: Instrument | "ALL";
+  impact: NewsImpact;
+  timestamp: number;
+}
