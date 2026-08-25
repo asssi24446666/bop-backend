@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { getUpcomingEconomicEvents, isNewsConfigured } from "@/providers/fmpNews";
-import type { Instrument } from "@/types";
+import { getUpcomingEconomicEvents, isNewsConfigured } from "@/providers/fmpNews.js";
+import type { Instrument } from "@/types/index.js";
 
 export const newsRouter = Router();
 
