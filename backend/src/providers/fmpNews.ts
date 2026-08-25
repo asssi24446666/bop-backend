@@ -11,8 +11,8 @@
 // still degrades gracefully (empty result) rather than erroring the
 // whole app.
 
-import { config } from "@/config/env";
-import type { Instrument, NewsEvent, NewsImpact } from "@/types";
+import { config } from "@/config/env.js";
+import type { Instrument, NewsEvent, NewsImpact } from "@/types/index.js";
 
 const BASE_URL = "https://financialmodelingprep.com/stable/economic-calendar";
 
@@ -86,4 +86,4 @@ export async function getUpcomingEconomicEvents(
   } catch {
     return [];
   }
-  }
+}
