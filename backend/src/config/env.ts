@@ -9,7 +9,7 @@ import "dotenv/config";
 function required(name: string): string {
   const value = process.env[name];
   if (!value) {
-    console.error(`[BOP backend] Missing required environment variable: ${name}`);
+    console.error([BOP backend] Missing required environment variable: ${name});
   }
   return value ?? "";
 }
@@ -54,6 +54,15 @@ export const config = {
     apiKey: optional("BROKER_API_KEY"),
     secret: optional("BROKER_SECRET"),
     accountId: optional("BROKER_ACCOUNT_ID")
+  },
+
+  firebase: {
+    // Paste the ENTIRE downloaded service-account JSON as a single
+    // line into this one env var (Railway → Variables).
+    serviceAccountJson: optional("FIREBASE_SERVICE_ACCOUNT"),
+    get isConfigured() {
+      return Boolean(this.serviceAccountJson);
+    }
   },
 
   features: {
